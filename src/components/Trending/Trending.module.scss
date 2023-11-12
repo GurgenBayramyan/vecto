@@ -1,0 +1,19 @@
+.Trending {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+
+  h3 {
+    color: white;
+  }
+  .movieList {
+    width: 100%;
+
+    img {
+      width: 150px;
+    }
+  }
+}

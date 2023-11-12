@@ -16,3 +16,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.react-multi-carousel-list {
+  padding: 0rem 0 2rem 0;
+  z-index: 0;
+}
+
+.react-multi-carousel-item {
+  z-index: 0;
+}

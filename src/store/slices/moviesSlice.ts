@@ -3,6 +3,7 @@ import { IMovie, IMoviesSliceInitialState } from "../types";
 
 const initialState: IMoviesSliceInitialState = {
   movies: [],
+  featured: {},
 };
 
 export const moviesSlice = createSlice({
@@ -12,7 +13,10 @@ export const moviesSlice = createSlice({
     setMovies: (state, { payload }: PayloadAction<IMovie[]>) => {
       state.movies = payload;
     },
+    setFeatured: (state, { payload }: PayloadAction<IMovie>) => {
+      state.featured = payload;
+    },
   },
 });
 
-export const { setMovies } = moviesSlice.actions;
+export const { setMovies, setFeatured } = moviesSlice.actions;

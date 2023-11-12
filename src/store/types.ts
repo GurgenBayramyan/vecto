@@ -14,4 +14,5 @@ export interface IMovie {
 
 export interface IMoviesSliceInitialState {
   movies: IMovie[];
+  featured: IMovie | {};
 }
