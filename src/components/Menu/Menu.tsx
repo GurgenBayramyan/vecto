@@ -1,14 +1,13 @@
-import React from "react";
-import styles from "./Menu.module.scss";
-import searchLogo from "../../assets/icons/ICON - Search.png";
-import homeLogo from "../../assets/icons/Group 46.png";
-import tvShowsLogo from "../../assets/icons/Group 56.png";
-import moviesLogo from "../../assets/icons/Group 54.png";
-import genresLogo from "../../assets/icons/Group 53.png";
-import watchLaterLogo from "../../assets/icons/Group 47.png";
 import { useDispatch } from "react-redux";
-import { setOpacityBg } from "../../store/slices/effectSlice";
+import homeLogo from "../../assets/icons/Group 46.png";
+import watchLaterLogo from "../../assets/icons/Group 47.png";
+import genresLogo from "../../assets/icons/Group 53.png";
+import moviesLogo from "../../assets/icons/Group 54.png";
+import tvShowsLogo from "../../assets/icons/Group 56.png";
+import searchLogo from "../../assets/icons/ICON - Search.png";
 import userImg from "../../assets/userimg.png";
+import { setOpacityBg } from "../../store/slices/effectSlice";
+import styles from "./Menu.module.scss";
 
 const Menu = () => {
   const dispatch = useDispatch();

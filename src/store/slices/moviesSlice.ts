@@ -3,7 +3,19 @@ import { IMovie, IMoviesSliceInitialState } from "../types";
 
 const initialState: IMoviesSliceInitialState = {
   movies: [],
-  featured: {},
+  featured: {
+    Id: "",
+    Title: "",
+    CoverImage: "",
+    TitleImage: "",
+    Date: "",
+    ReleaseYear: "",
+    MpaRating: "",
+    Category: "",
+    Duration: "",
+    VideoUrl: "",
+    Description: "",
+  },
 };
 
 export const moviesSlice = createSlice({

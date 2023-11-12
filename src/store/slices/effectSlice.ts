@@ -1,7 +1,9 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { IEffectsSliceInitialState } from "../types";
 
-const initialState = {
+const initialState: IEffectsSliceInitialState = {
   showOpacityBg: false,
+  isVideoPlaying: false,
 };
 
 export const effectSlice = createSlice({
@@ -11,7 +13,10 @@ export const effectSlice = createSlice({
     setOpacityBg: (state, { payload }: PayloadAction<boolean>) => {
       state.showOpacityBg = payload;
     },
+    setVideoPlaying: (state, { payload }: PayloadAction<boolean>) => {
+      state.isVideoPlaying = payload;
+    },
   },
 });
 
-export const { setOpacityBg } = effectSlice.actions;
+export const { setOpacityBg, setVideoPlaying } = effectSlice.actions;

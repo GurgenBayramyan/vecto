@@ -1,10 +1,8 @@
-import React from "react";
-import styles from "./App.module.scss";
+import { useSelector } from "react-redux";
+import { effectsSelector } from "../../store/selectors";
 import Home from "../Home/Home";
 import Menu from "../Menu/Menu";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
-import { effectsSelector } from "../../store/selectors";
+import styles from "./App.module.scss";
 
 function App() {
   const { showOpacityBg } = useSelector(effectsSelector);

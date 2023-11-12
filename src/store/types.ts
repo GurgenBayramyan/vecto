@@ -14,5 +14,10 @@ export interface IMovie {
 
 export interface IMoviesSliceInitialState {
   movies: IMovie[];
-  featured: IMovie | {};
+  featured: IMovie;
+}
+
+export interface IEffectsSliceInitialState {
+  showOpacityBg: boolean;
+  isVideoPlaying: boolean;
 }

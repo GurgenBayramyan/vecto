@@ -1,9 +1,11 @@
-import React from "react";
-import styles from "./Trending.module.scss";
-import { useSelector } from "react-redux";
-import { moviesSelector } from "../../store/selectors";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useDispatch, useSelector } from "react-redux";
+import { moviesSelector } from "../../store/selectors";
+import { setVideoPlaying } from "../../store/slices/effectSlice";
+import { setFeatured } from "../../store/slices/moviesSlice";
+import { IMovie } from "../../store/types";
+import styles from "./Trending.module.scss";
 
 const responsive = {
   desktop: {
@@ -24,6 +26,16 @@ const responsive = {
 };
 const Trending = () => {
   const { movies } = useSelector(moviesSelector);
+  const dispatch = useDispatch();
+
+  const onChooseMovie = (mov: IMovie) => {
+    sessionStorage.setItem("movieId", mov.Id);
+    dispatch(setFeatured(mov));
+    dispatch(setVideoPlaying(false));
+    setTimeout(() => {
+      dispatch(setVideoPlaying(true));
+    }, 2000);
+  };
 
   return (
     <div className={styles.Trending}>
@@ -36,11 +48,16 @@ const Trending = () => {
           draggable={true}
           showDots={false}
           infinite={true}
+          autoPlaySpeed={3000}
           partialVisible={false}
           dotListClass="custom-dot-list-style"
         >
           {movies.map((movie) => (
-            <div className={styles.card} key={movie.Id}>
+            <div
+              className={styles.card}
+              onClick={() => onChooseMovie(movie)}
+              key={movie.Id}
+            >
               <img src={require(`../../assets/${movie.CoverImage}`)} alt="" />
             </div>
           ))}

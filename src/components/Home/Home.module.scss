@@ -6,15 +6,18 @@
   padding: 30px 0 30px 20px;
   width: calc(100vw - 80px);
   height: 100%;
-  background: url("../../assets/FeaturedCoverImage.png") no-repeat;
+  background-image: url("../../assets/FeaturedCoverImage.png");
+  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  
 
   .movieDetails {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     color: #f1f1f1;
+    z-index: 2;
 
     p {
       margin: 10px 0;
@@ -75,5 +78,15 @@
         box-shadow: 0px 0px 20px #2727f5;
       }
     }
+  }
+
+  video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

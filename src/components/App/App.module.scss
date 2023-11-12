@@ -16,6 +16,7 @@
       linear-gradient(90deg, #040404 0%, #040404fa 21%, #04040400 100%) 0% 0%
       no-repeat padding-box;
     animation: show 0.3s ease-in-out;
+    z-index: 2;
   }
 }
 
