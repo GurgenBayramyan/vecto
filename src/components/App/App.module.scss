@@ -1,0 +1,29 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background: black;
+
+  .opacityBg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent
+      linear-gradient(90deg, #040404 0%, #040404fa 21%, #04040400 100%) 0% 0%
+      no-repeat padding-box;
+    animation: show 0.3s ease-in-out;
+  }
+}
+
+@keyframes show {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100vw;
+  }
+}
