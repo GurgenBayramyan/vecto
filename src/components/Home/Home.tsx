@@ -43,15 +43,11 @@ const Home = () => {
     <div className={styles.Home}>
       <div className={styles.movieDetails}>
         <p className={styles.category}>{featured.Category}</p>
-        <img src={movieTitleImg} />
+        <img src={movieTitleImg} alt={featured.Title} />
         <p className={styles.dateRatDur}>{`${featured.Date.slice(0, 4)} ${
           featured.MpaRating
         } ${convertSeconds(+featured.Duration)}`}</p>
-        <p className={styles.description}>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum
-          nostrum non facere, exercitationem sequi iste optio nam, quaerat
-          nesciunt sint, quae ut doloribus eum consectetur.
-        </p>
+        <p className={styles.description}>{featured.Description}</p>
         <div className={styles.btns}>
           <button className={styles.play}>
             <i className="bx bx-play"></i> Play
