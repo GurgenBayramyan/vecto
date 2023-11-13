@@ -7,6 +7,7 @@ import { setFeatured, setMovies } from "../../store/slices/moviesSlice";
 import { IMovie } from "../../store/types";
 import Trending from "../Trending/Trending";
 import styles from "./Home.module.scss";
+import { setVideoPlaying } from "../../store/slices/effectSlice";
 
 const Home = () => {
   const { featured } = useSelector(moviesSelector);
@@ -39,6 +40,10 @@ const Home = () => {
     fetchJson();
   }, []);
 
+  const playVideo = () => {
+    dispatch(setVideoPlaying(true));
+  };
+
   return (
     <div className={styles.Home}>
       <div className={styles.movieDetails}>
@@ -49,7 +54,7 @@ const Home = () => {
         } ${convertSeconds(+featured.Duration)}`}</p>
         <p className={styles.description}>{featured.Description}</p>
         <div className={styles.btns}>
-          <button className={styles.play}>
+          <button onClick={playVideo} className={styles.play}>
             <i className="bx bx-play"></i> Play
           </button>
           <button className={styles.info}>More Info</button>
