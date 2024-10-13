@@ -21,7 +21,7 @@ const Menu = () => {
                 <ul>
                     {listData.map((item) => (
                         <li key={item.id}>
-                            <img src={item.icon} alt={item.label} />
+                            <img src={item.icon} alt="alt" />
                             <p>{item.label}</p>
                         </li>
                     ))}

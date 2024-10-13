@@ -1,7 +1,4 @@
 import { useEffect } from "react";
-import movieTitleImg from "../../assets/FeaturedTitleImage.png";
-import { convertSeconds } from "../../helpers/secondsConverter";
-import { useFeatured } from "../../store/selectors";
 import {
     setFeatured,
     setMovies,
@@ -9,17 +6,13 @@ import {
 import Trending from "../Trending/Trending";
 import { fetchMoviesData, getFeaturedMovie } from "../../services";
 import { useAppDispatch } from "../../store";
-import {
-    setInfoModal,
-    setPlaying,
-} from "../../store/slices/effectSlice/effectSlice";
+
 import VideoModal from "./components/VideoModal";
 import InfoModal from "./components/InfoModal";
 import styles from "./Main.module.scss";
 import Details from "./components/Details";
 
 const Main = () => {
-    const featured = useFeatured();
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -35,7 +28,7 @@ const Main = () => {
             }
         };
         loadMovies();
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className={styles.Home}>
